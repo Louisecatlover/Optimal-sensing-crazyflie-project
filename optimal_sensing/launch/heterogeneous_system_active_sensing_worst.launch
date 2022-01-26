@@ -1,0 +1,41 @@
+<launch>
+   <node pkg="optimal_sensing" name="heterogeneous_system_formation" type="heterogeneous_system_formation_controller" output="screen" >
+     <param name="KPx" value="1.0" />
+     <param name="KPy" value="1.0" />
+     <param name="KPz" value="1.0" />
+	 <param name="KP_yaw" value="1.0" />
+	 <param name="K_Formation_x" value="0.4" />
+     <param name="K_Formation_y" value="0.4" />
+     <param name="weight_target" value="1.3" />
+	 <param name="desired_heading_1" value="0.523" />
+     <param name="desired_heading_2" value="4.71" />
+     <param name="desired_heading_3" value="3.14" />
+     <param name="dis_1_x" value="-0.8" />
+     <param name="dis_1_y" value="0" />
+     <param name="dis_1_z" value="0.3" />
+     <param name="dis_2_x" value="0" />
+     <param name="dis_2_y" value="0.8" />
+     <param name="dis_2_z" value="1.0" />
+     <param name="dis_3_x" value="0.8" />
+     <param name="dis_3_y" value="0" />
+     <param name="dis_3_z" value="0.5" />
+   </node>
+   <node pkg="optimal_sensing" name="heterogeneous_system_ukf" type="heterogeneous_system_ukf" output="screen" >
+     <param name="P_init_0" value="0.001" />
+     <param name="P_init_1" value="0.001" />
+     <param name="P_init_2" value="0.001" />
+	 <param name="P_init_3" value="0.001" />
+     <param name="measurement_noise_0" value="36" />
+     <param name="measurement_noise_1" value="36" />
+     <param name="measurement_noise_2" value="0.0001" />
+	 <param name="measurement_noise_3" value="0.0009" />
+	 <param name="process_noise_0" value="0.0001" />
+     <param name="process_noise_1" value="0.0001" />
+     <param name="process_noise_2" value="0.0001" />
+	 <param name="process_noise_3" value="0.0001" />
+	 <param name="x_init_0" value="1.0" />
+	 <param name="x_init_1" value="1.0" />
+	 <param name="x_init_2" value="0.5" />
+	 <param name="x_init_3" value="0.0" />
+   </node>
+</launch>

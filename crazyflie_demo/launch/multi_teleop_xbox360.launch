@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="uri1" default="radio://0/80/2M/E7E7E7E701" />
+  <arg name="uri2" default="radio://1/90/2M/E7E7E7E702" />
+  <arg name="uri3" default="radio://2/100/2M/E7E7E7E703" />
+  <arg name="joy_dev" default="/dev/input/js0" />
+
+  <include file="$(find crazyflie_driver)/launch/crazyflie_server.launch">
+  </include>
+
+  <group ns="crazyflie1">
+    <include file="$(find crazyflie_driver)/launch/crazyflie_add.launch">
+      <arg name="uri" value="$(arg uri1)" />
+      <arg name="tf_prefix" value="crazyflie1" />
+      <arg name="enable_logging" value="False" />
+    </include>
+
+    <node name="joy" pkg="joy" type="joy_node" output="screen" >
+      <param name="dev" value="$(arg joy_dev)" />
+    </node>
+
+    <include file="$(find crazyflie_demo)/launch/xbox360.launch">
+    </include>
+
+    <node name="crazyflie_demo_controller" pkg="crazyflie_demo" type="controller.py">
+    </node>
+  </group>
+
+  <!--group ns="crazyflie2">
+    <include file="$(find crazyflie_driver)/launch/crazyflie_add.launch">
+      <arg name="uri" value="$(arg uri2)" />
+      <arg name="tf_prefix" value="crazyflie2" />
+      <arg name="enable_logging" value="False" />
+    </include>
+
+    <node name="joy" pkg="joy" type="joy_node" output="screen" >
+      <param name="dev" value="$(arg joy_dev)" />
+    </node>
+
+    <include file="$(find crazyflie_demo)/launch/xbox360.launch">
+    </include>
+
+    <node name="crazyflie_demo_controller" pkg="crazyflie_demo" type="controller.py">
+    </node>
+  </group>
+
+   <group ns="crazyflie3">
+    <include file="$(find crazyflie_driver)/launch/crazyflie_add.launch">
+      <arg name="uri" value="$(arg uri3)" />
+      <arg name="tf_prefix" value="crazyflie3" />
+      <arg name="enable_logging" value="False" />
+    </include>
+
+    <node name="joy" pkg="joy" type="joy_node" output="screen" >
+      <param name="dev" value="$(arg joy_dev)" />
+    </node>
+
+    <include file="$(find crazyflie_demo)/launch/xbox360.launch">
+    </include>
+
+    <node name="crazyflie_demo_controller" pkg="crazyflie_demo" type="controller.py">
+    </node>
+  </group-->
+
+  
+</launch>

@@ -1,0 +1,12 @@
+std_msgs/Float64 vx_1
+std_msgs/Float64 vy_1
+std_msgs/Float64 vz_1
+std_msgs/Float64 wz_1
+std_msgs/Float64 vx_2
+std_msgs/Float64 vy_2
+std_msgs/Float64 vz_2
+std_msgs/Float64 wz_2
+std_msgs/Float64 vx_3
+std_msgs/Float64 vy_3
+std_msgs/Float64 vz_3
+std_msgs/Float64 wz_3

@@ -1,0 +1,12 @@
+std_msgs/Float64 rx_c
+std_msgs/Float64 ry_c
+std_msgs/Float64 rz_c
+std_msgs/Float64 theta_c
+std_msgs/Float64 rx_r
+std_msgs/Float64 ry_r
+std_msgs/Float64 rz_r
+std_msgs/Float64 theta_r
+std_msgs/Float64 rx_b
+std_msgs/Float64 ry_b
+std_msgs/Float64 rz_b
+std_msgs/Float64 theta_b

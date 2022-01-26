@@ -1,0 +1,6 @@
+std_msgs/Float64 theta_occ_cr
+std_msgs/Float64 theta_occ_cb
+std_msgs/Float64 theta_occ_rc
+std_msgs/Float64 theta_occ_rb
+std_msgs/Float64 theta_occ_bc
+std_msgs/Float64 theta_occ_br
